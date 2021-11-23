@@ -1,0 +1,3 @@
+EmailEvents
+| where Timestamp > ago(1h)
+| summarize hint.shufflekey = RecipientEmailAddress count() by Subject, RecipientEmailAddress, SenderFromAddress
